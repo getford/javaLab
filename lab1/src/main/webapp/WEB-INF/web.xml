@@ -1,0 +1,67 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>LoginController</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>AdminServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>GetCars</servlet-name>
+        <servlet-class>GetCars</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DeleteCars</servlet-name>
+        <servlet-class>DeleteCars</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>UserCars</servlet-name>
+        <servlet-class>UserCars</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>UserAddCars</servlet-name>
+        <servlet-class>UserAddCars</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserAddCars</servlet-name>
+        <url-pattern>/UserAddCars</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UserCars</servlet-name>
+        <url-pattern>/UserCars</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DeleteCars</servlet-name>
+        <url-pattern>/DeleteCars</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>GetCars</servlet-name>
+        <url-pattern>/GetCars</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/LoginController</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/AdminServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
