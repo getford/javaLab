@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="template.xhtml">
+    <ui:define name="content">
+        <h:form>
+            #{cards.setId(auth.getId())}
+            #{cards.getCountCards()}
+            #{cards.getAllCards()};
+        </h:form>
+
+        <br/>
+
+        <h:form>
+            <h1><h:outputText value="У вас #{cards.getCount()} карт(а)(ы)."/></h1>
+            <br/>
+
+            <h:panelGrid columns="2">
+                <h:dataTable value="#{cards.getArrayList()}" var="row">
+                    <h:column>
+                        <f:facet name="header">id_card</f:facet>
+                        #{row.id_card}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                        #{row.name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Cash</f:facet>
+                        #{row.cash}
+                    </h:column>
+                </h:dataTable>
+            </h:panelGrid>
+        </h:form>
+        <h:form>
+            <h:link value="Вернуться" outcome="index.xhtml"/>
+        </h:form>
+        <h:form>
+            <h:outputText value="id карты для оплаты: "/>
+            <h:inputText value="#{pay.id_card}" size="3"/>
+            <h:commandButton value="Оплатить" action="#{pay.go()}"/>
+            <h:link value="pay" outcome="pay.xhtml"/>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>
