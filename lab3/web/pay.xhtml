@@ -6,26 +6,29 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<ui:composition template="template.xhtml">
+<ui:composition template="WEB-INF/template.xhtml">
     <ui:define name="content">
-        <!-- ********** -->
-        #{pay.setId(cards.getId())}
-        #{pay.selectCash()}
-        <!-- ********** -->
         <h:form>
-            <h1>Информация о вашей карте</h1>
-            <h:outputText value="Имя карты: #{cards.name}"/>
-            <h:outputText value="Сумма на счете: #{pay.getCash()} " />
+            <div>
+                <h1>Информация о выбранной карте</h1>
+                <h:outputText value="Имя карты: #{pay.getName()}"/>
+                <br/>
+                <h:outputText value="Сумма на счете: #{pay.getCash()} "/>
+            </div>
         </h:form>
-
         <h:form>
             <h1>Оплата</h1>
             <br/>
             <h:outputText value="Сумма оплаты"/>
-            <h:inputText value="#{pay.pay_cash}" size="14"/>
-            <br/>
-            <h:commandButton action="" value="Оплатить"/>
+            <h:inputText value="#{pay.pay_cash}" size="4"/>
+            <h:commandButton action="#{pay.pay()}" value="Оплатить"/>
             <!-- <f:ajax execute="name" render="@form" />   -->
+
+            <h:form>
+                <br/>
+                <h:link value="Вернуться" outcome="viewCards.xhtml"/>
+            </h:form>
+
         </h:form>
     </ui:define>
 </ui:composition>

@@ -15,7 +15,7 @@ public class Cards {
     public Cards() {
     }
 
-    public Cards(int id_card, String name, String cash) {
+    private Cards(int id_card, String name, String cash) {
         this.id_card = id_card;
         this.name = name;
         this.cash = cash;
@@ -84,7 +84,7 @@ public class Cards {
         return count;
     }
 
-    public void setCount(int count) {
+    private void setCount(int count) {
         this.count = count;
     }
 
