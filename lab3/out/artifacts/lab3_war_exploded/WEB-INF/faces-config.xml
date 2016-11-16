@@ -23,6 +23,17 @@
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
 
+    <managed-bean>
+        <managed-bean-name>error</managed-bean-name>
+        <managed-bean-class>Error</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <validator>
+        <validator-id>validate</validator-id>
+        <validator-class>Validate</validator-class>
+    </validator>
+
     <!-- Регистрируем переходы по страницам -->
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
@@ -38,6 +49,25 @@
         <navigation-case>
             <from-outcome>true</from-outcome>
             <to-view-id>/pay.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-action>home</from-action>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pay.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>home</from-action>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-action>chooseCard</from-action>
+            <to-view-id>/viewCards.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
     </navigation-rule>

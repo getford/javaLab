@@ -10,10 +10,21 @@
     <ui:define name="content">
         <h:form>
             <br/>
+            <h:message for="validate" style="color: red"/><br/>
             <h:outputText value="Введите логин  "/>
-            <h:inputText value="#{auth.login}" size="16"/><br/><br/>
+            <h:inputText id="validate" value="#{auth.login}" size="16"
+                         rendered="true" label="Login">
+                <f:validateLength minimum="3" maximum="9"/>
+                <f:validator validatorId="validate"/>       <!-- Валидация -->
+            </h:inputText>
+            <br/><br/>
+            <h:message for="password" style="color: red"/><br/>
             <h:outputText value="Введите пароль "/>
-            <h:inputText value="#{auth.password}" size="16"/><br/><br/>
+            <h:inputSecret id="password" value="#{auth.password}" size="16"
+                           required="true" label="Password">
+                <f:validateLength minimum="3" maximum="9"/>
+            </h:inputSecret>
+            <br/><br/>
             <h:commandButton action="#{auth.checkAuth}" value="Enter"/>
         </h:form>
     </ui:define>

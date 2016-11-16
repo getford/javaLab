@@ -5,8 +5,8 @@ import java.sql.Statement;
 public class Pay {
 
     private int id;
-    private String id_card;
     private int cash;
+    private String id_card;
     private String name;
 
     private int pay_cash;       // сумма для оплаты
@@ -39,9 +39,13 @@ public class Pay {
 
     public boolean pay()       // оплата
             throws SQLException, ClassNotFoundException {
+        Error e = new Error();
         boolean flag = false;
         int tmp = getCash() - getPay_cash();
-        if (tmp >= 0) {
+        if (getCash() < getPay_cash()) {
+            e.errors("ERROR_PAY");
+        }
+        if (tmp >= 0 && tmp <= Integer.parseInt(getId_card())) {
             Connect connect = new Connect();
             Statement statement = connect.getConnection().createStatement();
             String sql = "UPDATE card set cash = " + tmp + " WHERE id = " + getId_card();
@@ -49,6 +53,9 @@ public class Pay {
 
             connect.closeConnect();
             statement.close();
+            flag = true;
+        } else {
+            e.errors("ERROR_NUM_CARD");
         }
         return flag;
     }

@@ -17,18 +17,22 @@
             </div>
         </h:form>
         <h:form>
-            <h1>Оплата</h1>
+            <h3>Оплата</h3>
             <br/>
+            <h:message for="Pay" style="color: red"/><br/>
             <h:outputText value="Сумма оплаты"/>
-            <h:inputText value="#{pay.pay_cash}" size="4"/>
+            <h:inputText id="Pay" value="#{pay.pay_cash}" size="4" rendered="true" label="Сумма платежа">
+                <f:validateLength minimum="1" maximum="2"/>
+            </h:inputText>
             <h:commandButton action="#{pay.pay()}" value="Оплатить"/>
-            <!-- <f:ajax execute="name" render="@form" />   -->
-
-            <h:form>
-                <br/>
-                <h:link value="Вернуться" outcome="viewCards.xhtml"/>
-            </h:form>
-
+        </h:form>
+        <h:form>
+            <br/>
+            <br/>
+            <h:commandButton action="chooseCard" value="Вернуться к выбору карт"/>
+            <br/>
+            <br/>
+            <h:commandButton action="home" value="Вернуться на главную"/>
         </h:form>
     </ui:define>
 </ui:composition>

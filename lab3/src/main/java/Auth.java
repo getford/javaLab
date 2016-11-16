@@ -2,8 +2,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 public class Auth {
-    // private static final Logger log = Logger.getLogger(Auth.class);
+    // static final Logger log = Logger.getLogger(Auth.class);
 
     private int id;
     private String login;
@@ -11,6 +12,9 @@ public class Auth {
 
     public boolean checkAuth()
             throws SQLException, ClassNotFoundException {
+
+        Error e = new Error();
+
         Connect connect = new Connect();
 
         PreparedStatement preparedStatement = connect.getConnection().

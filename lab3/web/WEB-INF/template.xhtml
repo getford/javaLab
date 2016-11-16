@@ -15,13 +15,16 @@
 
 <div id="header">
     <ui:insert name="header">
-        <h1>Добро пожаловать, #{auth.getLogin()}</h1>
+        <div style="text-align: center;">
+            <h:graphicImage url="/resources/pic/logo-java.png"/>
+        </div>
+        <br/>
+        <h1>Добро пожаловать, <span style="font-style: italic;">#{auth.getLogin()}</span></h1>
     </ui:insert>
 </div>
 
 <div id="content">
     <ui:insert name="content">
-        The content...
     </ui:insert>
 </div>
 

@@ -35,16 +35,21 @@
             </h:panelGrid>
         </h:form>
         <h:form>
-            <h:link value="Вернуться" outcome="index.xhtml"/>
-        </h:form>
-        <h:form>
             <br/>
             <br/>
             <h:outputText value="Перейти на страницу оплаты"/>
             <br/>
             <h:outputText value="ID карты для оплаты: "/>
             <h:inputText value="#{pay.id_card}" size="2"/>
-            <h:commandButton action="#{pay.selectInfoCard()}" value="GO"/>
+            <h:commandButton id="lenghID" action="#{pay.selectInfoCard()}" value="GO"/>
+            <br/>
+            <h:message for="lenghID" style="color: red"/>
+        </h:form>
+        <h:form>
+            <br/>
+            <br/>
+            <br/>
+            <h:commandButton action="home" value="Вернуться на главную"/>
         </h:form>
     </ui:define>
 </ui:composition>
