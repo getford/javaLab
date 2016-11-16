@@ -42,10 +42,10 @@ public class Pay {
         Error e = new Error();
         boolean flag = false;
         int tmp = getCash() - getPay_cash();
-        if (getCash() < getPay_cash()) {
+        if (getPay_cash() > getCash()) {
             e.errors("ERROR_PAY");
         }
-        if (tmp >= 0 && tmp <= Integer.parseInt(getId_card())) {
+        if (tmp >= 0 && tmp <= getCash()) {
             Connect connect = new Connect();
             Statement statement = connect.getConnection().createStatement();
             String sql = "UPDATE card set cash = " + tmp + " WHERE id = " + getId_card();

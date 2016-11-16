@@ -9,22 +9,18 @@
 <ui:composition template="WEB-INF/template.xhtml">
     <ui:define name="content">
         <h:form>
-            <div>
-                <h1>Информация о выбранной карте</h1>
-                <h:outputText value="Имя карты: #{pay.getName()}"/>
-                <br/>
-                <h:outputText value="Сумма на счете: #{pay.getCash()} "/>
-            </div>
-        </h:form>
-        <h:form>
             <h3>Оплата</h3>
-            <br/>
             <h:message for="Pay" style="color: red"/><br/>
             <h:outputText value="Сумма оплаты"/>
-            <h:inputText id="Pay" value="#{pay.pay_cash}" size="4" rendered="true" label="Сумма платежа">
+            <h:inputText id="Pay" value="#{pay.pay_cash}" size="4" label="Сумма платежа">
                 <f:validateLength minimum="1" maximum="3"/>
             </h:inputText>
             <h:commandButton action="#{pay.pay()}" value="Оплатить"/>
+            <!--    <f:ajax render="balance" execute="Pay"/> -->
+            <br/>
+            <br/>
+            <h:outputText value="Сумма на счете: #{pay.getCash()}"/><br/>
+            <h:outputText value="Имя карты: #{pay.getName()}"/>
         </h:form>
         <h:form>
             <br/>

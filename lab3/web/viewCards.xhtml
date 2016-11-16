@@ -13,11 +13,10 @@
             #{cards.getCountCards()}
             #{cards.getAllCards()};
         </h:form>
-        <br/>
         <h:form>
-            <h1><h:outputText value="У вас #{cards.getCount()} карт(а)(ы)."/></h1>
+            <h1><h:outputText value="У вас #{cards.getCount()} карт(а/ы)."/></h1>
             <br/>
-            <h:panelGrid columns="2">
+            <h:panelGrid columns="3">
                 <h:dataTable value="#{cards.getArrayList()}" var="row">
                     <h:column>
                         <f:facet name="header">id_card</f:facet>
