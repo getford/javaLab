@@ -4,7 +4,7 @@ public class Error {
     String errors(String code) {
         switch (code) {
             case "ERROR_LOGIN":
-                setError("Логин должне состоять только из латинских символов");
+                setError("ЛОГИН НЕ ДОЛЖЕН ИМЕТЬ ЦИФР");
                 break;
             case "ERROR_LOGIN_LENGHT":
                 setError("Логин привышает максимально дупустимую длину");

@@ -56,6 +56,7 @@ public class Pay {
             flag = true;
         } else {
             e.errors("ERROR_NUM_CARD");
+            System.out.println(e.getError());
         }
         return flag;
     }
