@@ -17,16 +17,16 @@ public class Connect {
         this.connection = connection;
     }
 
-    Connect()
-            throws SQLException, ClassNotFoundException {
+    Connect() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.jdbc.Driver");
         String url = "jdbc:mysql://localhost:3306/db_lab";
         String login = "root";
         String password = "";
         setConnection((Connection) DriverManager.getConnection(url, login, password));
-        if (connection != null){
+        if (connection != null) {
             System.out.println("Соединение установлено.");
-    }}
+        }
+    }
 
     void closeConnect() {
         try {

@@ -49,7 +49,7 @@ public class UserCars extends HttpServlet {
 
         statement.close();
         connect.closeConnect();
-        log.info("Автомобиль возвращен. ID авто: " + tmp + ".");
+        log.info("Пользователь вернул автомобиль. ID авто: " + tmp + ".");
         request.getRequestDispatcher("/GetCars").forward(request, response);
     }
 }

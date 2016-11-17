@@ -57,30 +57,28 @@ public class LoginController extends HttpServlet {
         if (resultSet.next()) {
             String lgn = resultSet.getString(2);
             String psw = resultSet.getString(3);
-            if (lgn.equals(login) && psw.equals(password)) {
+            if (psw.equals(password) && lgn.equals(login)) {
                 if (lgn.equals("admin")) {
                     session.setAttribute("acc", lgn);
                     GetCars cars = new GetCars();
                     cars.selectAllCars(request, response);
+                    log.info("Выполнен вход под Admin");
                     statement.close();
                     connect.closeConnect();
-                    log.info("Выполнен вход под Admin");
                     System.out.println("Выполнен вход под Admin");
                 }
                 if (lgn.equals("user")) {
                     session.setAttribute("acc", lgn);
                     GetCars cars = new GetCars();
                     cars.selectAllCars(request, response);
+                    log.info("Выполнен вход под User");
                     statement.close();
                     connect.closeConnect();
-                    log.info("Выполнен вход под User");
                     System.out.println("Выполнен вход под User");
                 }
             } else {
                 log.error("Ошибка авторизации");
                 log.error("Неверный логин или пароль");
-                System.out.println("Ошибка авторизации");
-                System.out.println("Неверный логин или пароль");
                 request.getRequestDispatcher("/error.jsp").forward(request, response);
             }
         }

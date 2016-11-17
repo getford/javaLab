@@ -71,12 +71,10 @@ public class GetCars extends HttpServlet {
 
         if (session.getAttribute("acc").equals("user")) {
             request.getRequestDispatcher("/userPage.jsp").forward(request, response);
-            System.out.println("Получен список автомобилей");
             connect.closeConnect();
         }
         if (session.getAttribute("acc").equals("admin")) {
             request.getRequestDispatcher("/adminPage.jsp").forward(request, response);
-            System.out.println("Получен список автомобилей");
             connect.closeConnect();
         }
     }

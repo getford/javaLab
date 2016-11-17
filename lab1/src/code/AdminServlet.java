@@ -12,16 +12,6 @@ import java.sql.Statement;
 public class AdminServlet extends HttpServlet {
     private static final Logger log = Logger.getLogger(AdminServlet.class);
 
-    private int count;
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
