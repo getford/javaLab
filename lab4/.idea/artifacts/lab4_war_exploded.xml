@@ -9,6 +9,7 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="JBoss Weld-2.0.3" />
+          <element id="library" level="project" name="Hibernate Validator-5.0.1" />
         </element>
       </element>
     </root>
