@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/java/Auth.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/Cards.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/Connect.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/Pay.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/lab4/Client.java" dialect="MySQL" />
+  </component>
+</project>

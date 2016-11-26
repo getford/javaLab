@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+    http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    <!-- Регистрируем бины -->
+    <managed-bean>
+        <managed-bean-name>auth</managed-bean-name>
+        <managed-bean-class>Auth</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>    <!-- Бин будет "жить" на протяжении всей сессии -->
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>cards</managed-bean-name>
+        <managed-bean-class>Cards</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>pay</managed-bean-name>
+        <managed-bean-class>Pay</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>error</managed-bean-name>
+        <managed-bean-class>Error</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>test</managed-bean-name>
+        <managed-bean-class>Test</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <validator>
+        <validator-id>validate</validator-id>
+        <validator-class>Validate</validator-class>
+    </validator>
+
+    <!-- Регистрируем переходы по страницам -->
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>true</from-outcome>        <!-- пересылает на новую страницу -->
+            <to-view-id>/viewCards.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/viewCards.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>true</from-outcome>
+            <to-view-id>/pay.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-action>home</from-action>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pay.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>home</from-action>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-action>chooseCard</from-action>
+            <to-view-id>/viewCards.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+</faces-config>
