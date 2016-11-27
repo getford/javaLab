@@ -1,38 +1,27 @@
-import javax.enterprise.inject.Default;
+import javax.inject.Inject;
+import javax.validation.constraints.NotNull;
 
-@Default
 public class Address {
 
-    String city = "Minsk";
-    String street = "Sverdlova";
-    String appart = "13a";
+    @NotNull
+    private String city;
+    @NotNull
+    private String street;
+    @NotNull
+    private String appart;
 
-
-    public String getFullAddress() {
-        return getCity() + "\t" + getStreet() + "\t" + getAppart();
+    @Inject
+    public Address() {
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
+    public Address(String city, String street, String appart) {
         this.city = city;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
         this.street = street;
-    }
-
-    public String getAppart() {
-        return appart;
-    }
-
-    public void setAppart(String appart) {
         this.appart = appart;
+    }
+
+    @Override
+    public String toString() {
+        return city + "\t" + street + "\t" + appart;
     }
 }

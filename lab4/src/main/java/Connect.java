@@ -16,7 +16,7 @@ class Connect {
 
     Connect() throws SQLException, ClassNotFoundException {
         // log.info("Попытка подключения к бд");
-        String url = "jdbc:mysql://localhost:3306/lab3";
+        String url = "jdbc:mysql://localhost:3306/lab4";
         String login = "root";
         String password = "";
         String driver = "com.mysql.jdbc.Driver";

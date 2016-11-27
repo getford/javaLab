@@ -30,12 +30,6 @@
     </managed-bean>
 
     <managed-bean>
-        <managed-bean-name>test</managed-bean-name>
-        <managed-bean-class>Test</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-    </managed-bean>
-
-    <managed-bean>
         <managed-bean-name>client</managed-bean-name>
         <managed-bean-class>Client</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
